@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Forms</title>
+	<title>Neon | Dashboard</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -33,7 +33,7 @@
 
 
 </head>
-<body class="page-body" data-url="http://neon.dev">
+<body class="page-body  " data-url="http://neon.dev">
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 	
@@ -86,7 +86,7 @@
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
                         </li><li>
-                            <a href="dashboard">
+                            <a href="liststocks">
                                 <span class="title">List Stocks</span>
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
@@ -113,10 +113,9 @@
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
+							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
 							{{$user->shopName}}  
 						</a>
-		
 						<ul class="dropdown-menu">
 		
 							<!-- Reverse Caret -->
@@ -155,88 +154,186 @@
 		
 				</ul>
 				
-				
+				{{-- <ul class="user-info pull-left pull-right-xs pull-none-xsm">
 		
-			</div>
+					<!-- Raw Notifications -->
+					<li class="notifications dropdown">
 		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-attention"></i>
+							<span class="badge badge-info">6</span>
+						</a>
 		
-			<!-- Raw Links -->
-			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p class="small">
+									<a href="#" class="pull-right">Mark all Read</a>
+									You have <strong>3</strong> new notifications.
+								</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li class="unread notification-success">
+										<a href="#">
+											<i class="entypo-user-add pull-right"></i>
+											
+											<span class="line">
+												<strong>New user registered</strong>
+											</span>
+											
+											<span class="line small">
+												30 seconds ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="unread notification-secondary">
+										<a href="#">
+											<i class="entypo-heart pull-right"></i>
+											
+											<span class="line">
+												<strong>Someone special liked this</strong>
+											</span>
+											
+											<span class="line small">
+												2 minutes ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-primary">
+										<a href="#">
+											<i class="entypo-user pull-right"></i>
+											
+											<span class="line">
+												<strong>Privacy settings have been changed</strong>
+											</span>
+											
+											<span class="line small">
+												3 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-danger">
+										<a href="#">
+											<i class="entypo-cancel-circled pull-right"></i>
+											
+											<span class="line">
+												John cancelled the event
+											</span>
+											
+											<span class="line small">
+												9 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-info">
+										<a href="#">
+											<i class="entypo-info pull-right"></i>
+											
+											<span class="line">
+												The server is status is stable
+											</span>
+											
+											<span class="line small">
+												yesterday at 10:30am
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-warning">
+										<a href="#">
+											<i class="entypo-rss pull-right"></i>
+											
+											<span class="line">
+												New comments waiting approval
+											</span>
+											
+											<span class="line small">
+												last week
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">View all notifications</a>
+							</li>
+						</ul>
 		
-				<ul class="list-inline links-list pull-right">
+					</li>
 		
 					
-					<li>
-						<a href="extra-login.html">
-							Log Out <i class="entypo-logout right"></i>
-						</a>
-					</li>
-				</ul>
+		
+					
+				</ul> --}}
 		
 			</div>
+		
+		
+		
 		
 		</div>
 		
 		<hr />
+	
+
 		
-					<ol class="breadcrumb bc-3" >
-								<li>
-						<a href="index.html"><i class="fa-home"></i>Home</a>
-					</li>
-							<li>
 		
-									<a href="forms-main.html">Stocks</a>
-							</li>
-						<li class="active">
 		
-									<strong>Add Stocks</strong>
-							</li>
-							</ol>
-					
-		<h2>Add New Stock</h2>
+		
 		<br />
 		
+		<h3>Exporting Table Data</h3>
+		<br />
 		
-		<div class="row">
-			<div class="col-md-12">
-				
-				<div class="panel panel-primary" data-collapsed="0">
-				
-					<div class="panel-heading">
-						<div class="panel-title">
-							Add New Stock Form
-						</div>
-						
-					</div>
-					
-					<div class="panel-body">
-						8699118011798 -> mendiva<br>
-						8690793010052 -> erikli<br>
-						8691381000011 -> beypazarı
-						<form role="form" method="GET" action="addstock"  class="form-horizontal form-groups-bordered">
-                            
-							<div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Barcode</label>
-								
-								<div class="col-sm-5">
-									<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
-								</div>
-							</div>
-							<div class="col-sm-offset-3 col-sm-5">
-								
-								<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
-							</div>
-                            
-						</form>
-						
-					</div>
-				
-		
+		<script type="text/javascript">
+		jQuery( document ).ready( function( $ ) {
+			var $table4 = jQuery( "#table-4" );
 			
-			</div>
-		</div>
+			$table4.DataTable( {
+				dom: 'Bfrtip',
+				buttons: [
+					'copyHtml5',
+					'excelHtml5',
+					'csvHtml5',
+					'pdfHtml5'
+				]
+			} );
+		} );		
+		</script>
 		
+		<table class="table table-bordered datatable" id="table-4">
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Barcode</th>
+                    <th>Stock Amount</th>
+                    <th>Price</th>
+					<th>Total Price</th>
 
+				</tr>
+			</thead>
+			<tbody>
+                @foreach ($stocks->data as $stock)
+                <tr class="odd gradeX">
+					<td>{{$stock->urunAdi}}</td>
+					<td>{{$stock->barcode}}</td>
+					<td>{{$stock->adet}}</td>
+                    <td>{{$stock->fiyat}}</td>
+					<td>{{$stock->fiyat*$stock->adet}}</td>
+
+				</tr>
+                @endforeach
+            </tbody>
+			
+		</table>
+		
+		
 		<!-- Footer -->
 		<footer class="main">
 			
@@ -247,20 +344,28 @@
 
 		
 
+	
+	
+	
 
+	
 
+	<!-- Imported styles on this page -->
+    <link rel="stylesheet" href="assets/js/datatables/datatables.css">
 	<!-- Bottom scripts (common) -->
 	<script src="assets/js/gsap/TweenMax.min.js"></script>
 	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/joinable.js"></script>
 	<script src="assets/js/resizeable.js"></script>
 	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/datatables/datatables.js"></script>
 
 
 	<!-- Imported scripts on this page -->
-	<script src="assets/js/bootstrap-switch.min.js"></script>
-	<script src="assets/js/neon-chat.js"></script>
+
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/toastr.js"></script>
 
 
 	<!-- JavaScripts initializations and stuff -->

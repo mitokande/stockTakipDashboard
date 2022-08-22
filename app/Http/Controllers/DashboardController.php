@@ -38,7 +38,7 @@ class DashboardController extends Controller
             'fiyat' =>$request->price,
             'stok' =>$request->stock
         )]), 'application/json')->post('https://jotform-intern.herokuapp.com/Stock.php', []);
-        return $response;
+        return redirect('/liststocks');
         return view('dashboard.addStock',[
             'user' =>unserialize(session('user')),
         ]);
@@ -48,5 +48,15 @@ class DashboardController extends Controller
         return view('dashboard.checkBarcode',[
             'user' =>unserialize(session('user')),
         ]);
+    }
+
+    public function listStocks(){
+        $response = Http::withHeaders([
+            "Token" => session('token')
+        ])->get('https://jotform-intern.herokuapp.com/Stock.php');
+        return view("dashboard.listStocks",[
+            'user' =>unserialize(session('user')),
+            'stocks' => json_decode($response)
+            ]);
     }
 }
