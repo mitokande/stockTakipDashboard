@@ -14,7 +14,7 @@ class DashboardController extends Controller
             'Token' => session('token'),
         ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
         
-        return view('dashboard.dashboard',[
+        return view('Dashboard.dashboard',[
             'user' =>unserialize(session('user')),
             'stocks' => json_decode($response)
         ]);
@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function createStock(Request $request){
         $response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('https://jotform-intern.herokuapp.com/Barcode.php', []);
         //8690793010052
-        return view('dashboard.addStock',[
+        return view('Dashboard.addStock',[
             'user' =>unserialize(session('user')),
             'barcode' => json_decode($response)
         ]);
@@ -39,13 +39,13 @@ class DashboardController extends Controller
             'stok' =>$request->stock
         )]), 'application/json')->post('https://jotform-intern.herokuapp.com/Stock.php', []);
         return redirect('/liststocks');
-        return view('dashboard.addStock',[
+        return view('Dashboard.addStock',[
             'user' =>unserialize(session('user')),
         ]);
     }
 
     public function checkBarcode(){
-        return view('dashboard.checkBarcode',[
+        return view('Dashboard.checkBarcode',[
             'user' =>unserialize(session('user')),
         ]);
     }
@@ -54,7 +54,7 @@ class DashboardController extends Controller
         $response = Http::withHeaders([
             "Token" => session('token')
         ])->get('https://jotform-intern.herokuapp.com/Stock.php');
-        return view("dashboard.listStocks",[
+        return view("Dashboard.listStocks",[
             'user' =>unserialize(session('user')),
             'stocks' => json_decode($response)
             ]);
