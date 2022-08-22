@@ -13,7 +13,7 @@
 	<title>Neon | Forms</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
-	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
+	<link rel="stylesheet" href="/assets/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/neon-core.css">
@@ -93,7 +93,22 @@
                         </li>
                     </ul>
                 </li>
-				
+				<li class="has sub">
+                    <a href="">Orders</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="checkbarcode">
+                                <span class="title">Add Order</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listorders">
+                                <span class="title">List Orders</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 			</ul>
 			
 		</div>
@@ -179,62 +194,121 @@
 		
 		<hr />
 		
+					@if ($type == 'order')
 					<ol class="breadcrumb bc-3" >
-								<li>
-						<a href="index.html"><i class="fa-home"></i>Home</a>
+						<li>
+				<a href="index.html"><i class="fa-home"></i>Home</a>
+			</li>
+					<li>
+
+							<a href="forms-main.html">Orders</a>
 					</li>
-							<li>
-		
-									<a href="forms-main.html">Stocks</a>
-							</li>
-						<li class="active">
-		
-									<strong>Add Stocks</strong>
-							</li>
-							</ol>
-					
-		<h2>Add New Stock</h2>
-		<br />
-		
-		
-		<div class="row">
-			<div class="col-md-12">
-				
-				<div class="panel panel-primary" data-collapsed="0">
-				
-					<div class="panel-heading">
-						<div class="panel-title">
-							Add New Stock Form
-						</div>
-						
-					</div>
-					
-					<div class="panel-body">
-						8699118011798 -> mendiva<br>
-						8690793010052 -> erikli<br>
-						8691381000011 -> beypazarı
-						<form role="form" method="GET" action="addstock"  class="form-horizontal form-groups-bordered">
-                            
-							<div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Barcode</label>
-								
-								<div class="col-sm-5">
-									<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
-								</div>
-							</div>
-							<div class="col-sm-offset-3 col-sm-5">
-								
-								<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
-							</div>
-                            
-						</form>
-						
-					</div>
-				
-		
+				<li class="active">
+
+							<strong>Add Order</strong>
+					</li>
+					</ol>
 			
+<h2>Add New Order</h2>
+<br />
+
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="panel panel-primary" data-collapsed="0">
+		
+			<div class="panel-heading">
+				<div class="panel-title">
+					Add New Order Form
+				</div>
+				
 			</div>
-		</div>
+			
+			<div class="panel-body">
+				8699118011798 -> mendiva<br>
+				8690793010052 -> erikli<br>
+				8691381000011 -> beypazarı
+				<form role="form" method="GET" action="addorder"  class="form-horizontal form-groups-bordered">
+					
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Barcode</label>
+						
+						<div class="col-sm-5">
+							<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
+						</div>
+					</div>
+					<div class="col-sm-offset-3 col-sm-5">
+						
+						<input type="submit" name="add" class="btn btn-default" value="Add Order" />
+					</div>
+					
+				</form>
+				
+			</div>
+		
+
+	
+	</div>
+</div>
+					@else
+					<ol class="breadcrumb bc-3" >
+						<li>
+				<a href="index.html"><i class="fa-home"></i>Home</a>
+			</li>
+					<li>
+
+							<a href="forms-main.html">Stocks</a>
+					</li>
+				<li class="active">
+
+							<strong>Add Stocks</strong>
+					</li>
+					</ol>
+			
+<h2>Add New Stock</h2>
+<br />
+
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="panel panel-primary" data-collapsed="0">
+		
+			<div class="panel-heading">
+				<div class="panel-title">
+					Add New Stock Form
+				</div>
+				
+			</div>
+			
+			<div class="panel-body">
+				8699118011798 -> mendiva<br>
+				8690793010052 -> erikli<br>
+				8691381000011 -> beypazarı
+				<form role="form" method="GET" action="addstock"  class="form-horizontal form-groups-bordered">
+					
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Barcode</label>
+						
+						<div class="col-sm-5">
+							<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
+						</div>
+					</div>
+					<div class="col-sm-offset-3 col-sm-5">
+						
+						<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
+					</div>
+					
+				</form>
+				
+			</div>
+		
+
+	
+	</div>
+</div>
+					@endif
 		
 
 		<!-- Footer -->

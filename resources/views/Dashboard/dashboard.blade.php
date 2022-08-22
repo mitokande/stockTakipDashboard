@@ -93,7 +93,22 @@
                         </li>
                     </ul>
                 </li>
-				
+				<li class="has sub">
+                    <a href="">Orders</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="checkbarcode">
+                                <span class="title">Add Order</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listorders">
+                                <span class="title">List Orders</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 			</ul>
 			
 		</div>
@@ -279,15 +294,8 @@
 			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
 		
 				<ul class="list-inline links-list pull-right">
-		
-				
-		
-		
-					
-					
-		
 					<li>
-						<a href="extra-login.html">
+						<a href="{{route('logout')}}">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>

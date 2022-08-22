@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Dashboard</title>
+	<title>Jotstocks | Stocklist</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -93,10 +93,26 @@
                         </li>
                     </ul>
                 </li>
-				
+				<li class="has sub">
+                    <a href="">Orders</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="checkbarcode">
+                                <span class="title">Add Order</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listorders">
+                                <span class="title">List Orders</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 			</ul>
 			
 		</div>
+		
 
 	</div>
 
@@ -273,7 +289,18 @@
 				</ul> --}}
 		
 			</div>
+		<!-- Raw Links -->
+		<div class="col-md-6 col-sm-4 clearfix hidden-xs">
 		
+			<ul class="list-inline links-list pull-right">
+				<li>
+					<a href="{{route('logout')}}">
+						Log Out <i class="entypo-logout right"></i>
+					</a>
+				</li>
+			</ul>
+	
+		</div>
 		
 		
 		

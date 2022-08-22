@@ -23,13 +23,25 @@ Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
 Route::get('/register',[RegisterController::class,'register'])->name('register');
 Route::post('/register',[RegisterController::class,'postRegister'])->name('postRegister');
 
-Route::get('/dashboard',[DashboardController::class,'index']);
+Route::middleware(['jotauth'])->group(function(){
+    Route::get('/dashboard',[DashboardController::class,'index'])->middleware('jotauth');
 
-Route::get('/addstock',[DashboardController::class,'createStock']);
-Route::post('/addstock',[DashboardController::class,'addStock']);
+    Route::get('/addstock',[DashboardController::class,'createStock']);
+    Route::post('/addstock',[DashboardController::class,'addStock']);
+    
+    Route::get('/checkbarcode',[DashboardController::class,'checkBarcode']);
+    Route::get('/liststocks',[DashboardController::class,'listStocks']);
 
-Route::get('/checkbarcode',[DashboardController::class,'checkBarcode']);
-Route::get('/liststocks',[DashboardController::class,'listStocks']);
+    Route::get('/addorder',[DashboardController::class,'createOrder']);
+    Route::post('/addorder',[DashboardController::class,'addOrder']);
+    
+    // Route::get('/checkbarcode',[DashboardController::class,'checkBarcode']);
+    Route::get('/listorders',[DashboardController::class,'listOrders']);
+    
+});
+
+
+Route::get('/logout',[DashboardController::class,'logout'])->name('logout');
 
 
 Route::get('/deneme',function(){

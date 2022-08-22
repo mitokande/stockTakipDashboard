@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Forms</title>
+	<title>Jotstocks | Stocklist</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -33,7 +33,7 @@
 
 
 </head>
-<body class="page-body" data-url="http://neon.dev">
+<body class="page-body  " data-url="http://neon.dev">
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 	
@@ -86,14 +86,14 @@
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
                         </li><li>
-                            <a href="dashboard">
+                            <a href="liststocks">
                                 <span class="title">List Stocks</span>
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
                         </li>
                     </ul>
                 </li>
-				<li class="has sub">
+                <li class="has sub">
                     <a href="">Orders</a>
                     <ul class="visible">
                         <li >
@@ -109,9 +109,11 @@
                         </li>
                     </ul>
                 </li>
+				
 			</ul>
 			
 		</div>
+		
 
 	</div>
 
@@ -128,10 +130,9 @@
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
+							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
 							{{$user->shopName}}  
 						</a>
-		
 						<ul class="dropdown-menu">
 		
 							<!-- Reverse Caret -->
@@ -170,105 +171,197 @@
 		
 				</ul>
 				
-				
+				{{-- <ul class="user-info pull-left pull-right-xs pull-none-xsm">
 		
-			</div>
+					<!-- Raw Notifications -->
+					<li class="notifications dropdown">
 		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-attention"></i>
+							<span class="badge badge-info">6</span>
+						</a>
 		
-			<!-- Raw Links -->
-			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p class="small">
+									<a href="#" class="pull-right">Mark all Read</a>
+									You have <strong>3</strong> new notifications.
+								</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li class="unread notification-success">
+										<a href="#">
+											<i class="entypo-user-add pull-right"></i>
+											
+											<span class="line">
+												<strong>New user registered</strong>
+											</span>
+											
+											<span class="line small">
+												30 seconds ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="unread notification-secondary">
+										<a href="#">
+											<i class="entypo-heart pull-right"></i>
+											
+											<span class="line">
+												<strong>Someone special liked this</strong>
+											</span>
+											
+											<span class="line small">
+												2 minutes ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-primary">
+										<a href="#">
+											<i class="entypo-user pull-right"></i>
+											
+											<span class="line">
+												<strong>Privacy settings have been changed</strong>
+											</span>
+											
+											<span class="line small">
+												3 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-danger">
+										<a href="#">
+											<i class="entypo-cancel-circled pull-right"></i>
+											
+											<span class="line">
+												John cancelled the event
+											</span>
+											
+											<span class="line small">
+												9 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-info">
+										<a href="#">
+											<i class="entypo-info pull-right"></i>
+											
+											<span class="line">
+												The server is status is stable
+											</span>
+											
+											<span class="line small">
+												yesterday at 10:30am
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-warning">
+										<a href="#">
+											<i class="entypo-rss pull-right"></i>
+											
+											<span class="line">
+												New comments waiting approval
+											</span>
+											
+											<span class="line small">
+												last week
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">View all notifications</a>
+							</li>
+						</ul>
 		
-				<ul class="list-inline links-list pull-right">
+					</li>
 		
 					
-					<li>
-						<a href="{{route('logout')}}">
-							Log Out <i class="entypo-logout right"></i>
-						</a>
-					</li>
-				</ul>
+		
+					
+				</ul> --}}
 		
 			</div>
+		<!-- Raw Links -->
+		<div class="col-md-6 col-sm-4 clearfix hidden-xs">
+		
+			<ul class="list-inline links-list pull-right">
+				<li>
+					<a href="{{route('logout')}}">
+						Log Out <i class="entypo-logout right"></i>
+					</a>
+				</li>
+			</ul>
+	
+		</div>
+		
+		
 		
 		</div>
 		
 		<hr />
+	
+
 		
-					<ol class="breadcrumb bc-3" >
-								<li>
-						<a href="index.html"><i class="fa-home"></i>Home</a>
-					</li>
-							<li>
 		
-									<a href="forms-main.html">Stocks</a>
-							</li>
-						<li class="active">
 		
-									<strong>Add Stocks</strong>
-							</li>
-							</ol>
-					
-		<h2>Add New Stock</h2>
+		
 		<br />
 		
+		<h3>Exporting Table Data</h3>
+		<br />
 		
-		<div class="row">
-			<div class="col-md-12">
-				
-				<div class="panel panel-primary" data-collapsed="0">
-				
-					<div class="panel-heading">
-						<div class="panel-title">
-							Add New Stock Form
-						</div>
-						
-					</div>
-					
-					<div class="panel-body">
-						
-						<form role="form" method="POST" class="form-horizontal form-groups-bordered">
-                            @csrf
-							<div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Product Name</label>
-								<div class="col-sm-5">
-									<input type="text" name="name" class="form-control" value="{{$barcode->data[0]->urunAdi}}" id="field-1" placeholder="Product Name" readonly>
-								</div>
-							</div>
-                            <div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Barcode</label>
-								
-								<div class="col-sm-5">
-									<input type="text" name="barcode" class="form-control" value="{{$barcode->data[0]->barcode}}" id="field-1" placeholder="Barcode Number" readonly>
-								</div>
-							</div>
-                            <div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Price</label>
-								
-								<div class="col-sm-5">
-									<input type="text" name="price" class="form-control" value="{{$barcode->data[0]->fiyat}}" id="field-1" placeholder="Price" readonly>
-								</div>
-							</div>
-                            <div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Stock Amount</label>
-								
-								<div class="col-sm-5">
-									<input type="text" name="stock" class="form-control" id="field-1" placeholder="Stock Amount">
-								</div>
-							</div>
-                            <div class="col-sm-offset-3 col-sm-5">
-								
-								<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
-							</div>
-						</form>
-						
-					</div>
-				
-		
+		<script type="text/javascript">
+		jQuery( document ).ready( function( $ ) {
+			var $table4 = jQuery( "#table-4" );
 			
-			</div>
-		</div>
+			$table4.DataTable( {
+				dom: 'Bfrtip',
+				buttons: [
+					'copyHtml5',
+					'excelHtml5',
+					'csvHtml5',
+					'pdfHtml5'
+				]
+			} );
+		} );		
+		</script>
 		
+		<table class="table table-bordered datatable" id="table-4">
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Barcode</th>
+                    <th>Stock Amount</th>
+                    <th>Price</th>
+					<th>Total Price</th>
 
+				</tr>
+			</thead>
+			<tbody>
+                @foreach ($orders->data as $order)
+                <tr class="odd gradeX">
+					<td>{{$order->urunAdi}}</td>
+					<td>{{$order->barcode}}</td>
+					<td>{{$order->adet}}</td>
+                    <td>{{$order->fiyat}}</td>
+					<td>{{$order->fiyat*$order->adet}}</td>
+
+				</tr>
+                @endforeach
+            </tbody>
+			
+		</table>
+		
+		
 		<!-- Footer -->
 		<footer class="main">
 			
@@ -278,137 +371,29 @@
 	</div>
 
 		
-	<div id="chat" class="fixed" data-current-user="Art Ramadani" data-order-by-status="1" data-max-chat-history="25">
-	
-		<div class="chat-inner">
-	
-	
-			<h2 class="chat-header">
-				<a href="#" class="chat-close"><i class="entypo-cancel"></i></a>
-	
-				<i class="entypo-users"></i>
-				Chat
-				<span class="badge badge-success is-hidden">0</span>
-			</h2>
-	
-	
-			<div class="chat-group" id="group-1">
-				<strong>Favorites</strong>
-	
-				<a href="#" id="sample-user-123" data-conversation-history="#sample_history"><span class="user-status is-online"></span> <em>Catherine J. Watkins</em></a>
-				<a href="#"><span class="user-status is-online"></span> <em>Nicholas R. Walker</em></a>
-				<a href="#"><span class="user-status is-busy"></span> <em>Susan J. Best</em></a>
-				<a href="#"><span class="user-status is-offline"></span> <em>Brandon S. Young</em></a>
-				<a href="#"><span class="user-status is-idle"></span> <em>Fernando G. Olson</em></a>
-			</div>
-	
-	
-			<div class="chat-group" id="group-2">
-				<strong>Work</strong>
-	
-				<a href="#"><span class="user-status is-offline"></span> <em>Robert J. Garcia</em></a>
-				<a href="#" data-conversation-history="#sample_history_2"><span class="user-status is-offline"></span> <em>Daniel A. Pena</em></a>
-				<a href="#"><span class="user-status is-busy"></span> <em>Rodrigo E. Lozano</em></a>
-			</div>
-	
-	
-			<div class="chat-group" id="group-3">
-				<strong>Social</strong>
-	
-				<a href="#"><span class="user-status is-busy"></span> <em>Velma G. Pearson</em></a>
-				<a href="#"><span class="user-status is-offline"></span> <em>Margaret R. Dedmon</em></a>
-				<a href="#"><span class="user-status is-online"></span> <em>Kathleen M. Canales</em></a>
-				<a href="#"><span class="user-status is-offline"></span> <em>Tracy J. Rodriguez</em></a>
-			</div>
-	
-		</div>
-	
-		<!-- conversation template -->
-		<div class="chat-conversation">
-	
-			<div class="conversation-header">
-				<a href="#" class="conversation-close"><i class="entypo-cancel"></i></a>
-	
-				<span class="user-status"></span>
-				<span class="display-name"></span>
-				<small></small>
-			</div>
-	
-			<ul class="conversation-body">
-			</ul>
-	
-			<div class="chat-textarea">
-				<textarea class="form-control autogrow" placeholder="Type your message"></textarea>
-			</div>
-	
-		</div>
-	
-	</div>
-	
-	
-	<!-- Chat Histories -->
-	<ul class="chat-history" id="sample_history">
-		<li>
-			<span class="user">Art Ramadani</span>
-			<p>Are you here?</p>
-			<span class="time">09:00</span>
-		</li>
-	
-		<li class="opponent">
-			<span class="user">Catherine J. Watkins</span>
-			<p>This message is pre-queued.</p>
-			<span class="time">09:25</span>
-		</li>
-	
-		<li class="opponent">
-			<span class="user">Catherine J. Watkins</span>
-			<p>Whohoo!</p>
-			<span class="time">09:26</span>
-		</li>
-	
-		<li class="opponent unread">
-			<span class="user">Catherine J. Watkins</span>
-			<p>Do you like it?</p>
-			<span class="time">09:27</span>
-		</li>
-	</ul>
-	
-	
-	
-	
-	<!-- Chat Histories -->
-	<ul class="chat-history" id="sample_history_2">
-		<li class="opponent unread">
-			<span class="user">Daniel A. Pena</span>
-			<p>I am going out.</p>
-			<span class="time">08:21</span>
-		</li>
-	
-		<li class="opponent unread">
-			<span class="user">Daniel A. Pena</span>
-			<p>Call me when you see this message.</p>
-			<span class="time">08:27</span>
-		</li>
-	</ul>
 
 	
-</div>
+	
+	
 
+	
 
-
-
+	<!-- Imported styles on this page -->
+    <link rel="stylesheet" href="assets/js/datatables/datatables.css">
 	<!-- Bottom scripts (common) -->
 	<script src="assets/js/gsap/TweenMax.min.js"></script>
 	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/joinable.js"></script>
 	<script src="assets/js/resizeable.js"></script>
 	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/datatables/datatables.js"></script>
 
 
 	<!-- Imported scripts on this page -->
-	<script src="assets/js/bootstrap-switch.min.js"></script>
-	<script src="assets/js/neon-chat.js"></script>
+
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/toastr.js"></script>
 
 
 	<!-- JavaScripts initializations and stuff -->
