@@ -11,7 +11,7 @@ class RegisterController extends Controller
 
     public function register()
     {
-        return view("Auth.Register");
+        return view("auth.Register");
     }
 
     public function postRegister(Request $request) {
