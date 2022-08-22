@@ -31,7 +31,7 @@ class RegisterController extends Controller
         if ($decodedResponse->success)
         {
             session(['token' => $decodedResponse->data->userToken]);
-            return $decodedResponse->message;
+            return redirect('/dashboard');
         }
         return $decodedResponse->message;
     }
