@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\Stock\StockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
+Route::get('/stocks',[StockController::class,'stocks'])->name('stocks');
+
 Route::get('/deneme',function(){
     return 'token is '.session('token');
 });
