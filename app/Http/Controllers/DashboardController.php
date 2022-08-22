@@ -9,7 +9,6 @@ class DashboardController extends Controller
 {
     //
     public function index(){
-        return session('token');
         $response = Http::withHeaders([
             'Token' => session('token'),
         ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
