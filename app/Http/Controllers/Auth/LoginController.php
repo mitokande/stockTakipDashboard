@@ -28,7 +28,8 @@ class LoginController extends Controller
         if ($responseData->success)
         {
             session(['token' => $responseData->data->userToken]);
-            return $responseData->message;
+            session(['user'=> serialize($responseData->data)]);
+            return redirect('/dashboard');
         }
       return $responseData->message;
     }

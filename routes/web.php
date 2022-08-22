@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::get('/', function () {
 });
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
-Route::get('/deneme',function(){
-    return 'token is '.session('token');
-});
+Route::get('/dashboard',[DashboardController::class,'index']);
+
+Route::get('/addstock',[DashboardController::class,'createStock']);
+Route::post('/addstock',[DashboardController::class,'addStock']);
+
+Route::get('/checkbarcode',[DashboardController::class,'checkBarcode']);
