@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
+Route::get('/deneme',function(){
+    return 'token is '.session('token');
+});
