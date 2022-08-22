@@ -24,7 +24,7 @@ class RegisterController extends Controller
             "password" => $password,
             "username" => $username,
             "email" => $email,
-            "shopName" => $shopName
+            "shop_name" => $shopName
         ]);
 
         $decodedResponse = json_decode($response);
