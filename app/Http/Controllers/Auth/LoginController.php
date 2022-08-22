@@ -27,7 +27,7 @@ class LoginController extends Controller
         $responseData = json_decode($response);
         if ($responseData->success)
         {
-            Session::put($username,$responseData->data->userToken);
+            session(['token' => $responseData->data->userToken]);
             return $responseData->message;
         }
       return $responseData->message;
