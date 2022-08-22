@@ -14,23 +14,27 @@
 <body>
 <div class="container" style="margin-top: 100px">
     <h1 style="text-align: center">Welcome To JotStock</h1>
-    <form style="margin-top: 100px" method="post">
-        @csrf
-        <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input name="username"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary"  >Submit</button>
-    </form>
+    <h4 style="text-align: center">Sign In To Our World</h4>
+
+    <div
+        style="background: #F5F5F5; margin: 15px; padding: 30px; border-radius: 20px; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);">
+        <form style="margin-top: 50px" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input name="username" type="text" class="form-control" id="exampleInputEmail1"
+                       aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Jotform_logo.png">
 </div>
 
 
