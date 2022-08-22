@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Stock\StockController;
+use \App\Http\Controllers\Auth\RegisterController;
+use \App\Http\Controllers\ApplicationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +16,14 @@ use \App\Http\Controllers\Stock\StockController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ApplicationController::class,"home"])->name("home");
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
 Route::get('/stocks',[StockController::class,'stocks'])->name('stocks');
+
+Route::get('/register',[RegisterController::class,'register'])->name('register');
+Route::post('/register',[RegisterController::class,'postRegister'])->name('postRegister');
+
 
 Route::get('/deneme',function(){
     return 'token is '.session('token');
