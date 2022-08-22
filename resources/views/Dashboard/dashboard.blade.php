@@ -97,7 +97,7 @@
                     <a href="">Orders</a>
                     <ul class="visible">
                         <li >
-                            <a href="checkbarcode">
+                            <a href="checkbarcode?add=order">
                                 <span class="title">Add Order</span>
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
