@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Dashboard</title>
+	<title> Jotstocks | Dashboard</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -46,7 +46,7 @@
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<img src="assets/images/logo@2x.png" width="120" alt="" />
+						<img src="assets/images/jotstocks2.svg" width="120" alt="" />
 					</a>
 				</div>
 
