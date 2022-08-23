@@ -9,13 +9,17 @@ class DashboardController extends Controller
 {
     //
     public function index(){
-        $response = Http::withHeaders([
+        $stockResponse = Http::withHeaders([
             'Token' => session('token'),
         ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
+        $orderResponse = Http::withHeaders([
+            'Token' => session('token'),
+        ])->post('https://jotform-intern.herokuapp.com/Order.php', []);
         
         return view('Dashboard.dashboard',[
             'user' =>unserialize(session('user')),
-            'stocks' => json_decode($response)
+            'stocks' => json_decode($stockResponse),
+            'orders' => json_decode($orderResponse)
         ]);
         
     }

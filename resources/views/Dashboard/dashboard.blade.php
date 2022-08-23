@@ -401,7 +401,7 @@
                     }
                     ?>
 					<div class="num" data-start="0" data-end="{{$count}}" data-postfix="" data-duration="1500" data-delay="600">0</div>
-		
+					
 					<h3>Product Count</h3>
 					<p>Current total amount of every product stock.</p>
 				</div>
@@ -414,22 +414,29 @@
 		
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
-					<div class="num" data-start="0" data-end="23" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+					<div class="num" data-start="0" data-end="{{count($orders->data)}}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
-					<h3>New Messages</h3>
-					<p>messages per day.</p>
+					<h3>Orders Made</h3>
+					<p>Amount of product sold.</p>
 				</div>
 		
 			</div>
 		
 			<div class="col-sm-3 col-xs-6">
-		
+				<?php 
+                    $lowStock =0;
+                    foreach ($stocks->data as $stock) {
+						if($stock->adet < 10){
+							$lowStock += 1;
+						}
+                    }
+                    ?>
 				<div class="tile-stats tile-blue">
 					<div class="icon"><i class="entypo-rss"></i></div>
-					<div class="num" data-start="0" data-end="52" data-postfix="" data-duration="1500" data-delay="1800">0</div>
+					<div class="num" data-start="0" data-end="{{$lowStock}}" data-postfix="" data-duration="1500" data-delay="1800">0</div>
 		
-					<h3>Subscribers</h3>
-					<p>on our site right now.</p>
+					<h3>Low Stock</h3>
+					<p>Types of products that is low on stock.</p>
 				</div>
 		
 			</div>
