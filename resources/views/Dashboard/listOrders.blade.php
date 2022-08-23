@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Jotstocks | Stocklist</title>
+    <title>JotStock | Orders</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -24,7 +24,7 @@
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,17 +36,17 @@
 <body class="page-body  " data-url="http://neon.dev">
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-	
+
 	<div class="sidebar-menu">
 
 		<div class="sidebar-menu-inner">
-			
+
 			<header class="logo-env">
 
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<img src="assets/images/logo@2x.png" width="120" alt="" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Jotform_logo.png" width="160" alt="" />
 					</a>
 				</div>
 
@@ -57,7 +57,7 @@
 					</a>
 				</div>
 
-								
+
 				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
 				<div class="sidebar-mobile-menu visible-xs">
 					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
@@ -66,8 +66,8 @@
 				</div>
 
 			</header>
-			
-									
+
+
 			<ul id="main-menu" class="main-menu">
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
@@ -109,35 +109,35 @@
                         </li>
                     </ul>
                 </li>
-				
+
 			</ul>
-			
+
 		</div>
-		
+
 
 	</div>
 
 	<div class="main-content">
-				
+
 		<div class="row">
-		
+
 			<!-- Profile Info and Notifications -->
 			<div class="col-md-6 col-sm-8 clearfix">
-		
+
 				<ul class="user-info pull-left pull-none-xsm">
-		
+
 					<!-- Profile Info -->
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
-		
+
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
-							{{$user->shopName}}  
+							{{$user->shopName}}
 						</a>
 						<ul class="dropdown-menu">
-		
+
 							<!-- Reverse Caret -->
 							<li class="caret"></li>
-		
+
 							<!-- Profile sub-links -->
 							<li>
 								<a href="extra-timeline.html">
@@ -145,21 +145,21 @@
 									Edit Profile
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="mailbox.html">
 									<i class="entypo-mail"></i>
 									Inbox
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="extra-calendar.html">
 									<i class="entypo-calendar"></i>
 									Calendar
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="#">
 									<i class="entypo-clipboard"></i>
@@ -168,19 +168,19 @@
 							</li>
 						</ul>
 					</li>
-		
+
 				</ul>
-				
+
 				{{-- <ul class="user-info pull-left pull-right-xs pull-none-xsm">
-		
+
 					<!-- Raw Notifications -->
 					<li class="notifications dropdown">
-		
+
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 							<i class="entypo-attention"></i>
 							<span class="badge badge-info">6</span>
 						</a>
-		
+
 						<ul class="dropdown-menu">
 							<li class="top">
 								<p class="small">
@@ -188,87 +188,87 @@
 									You have <strong>3</strong> new notifications.
 								</p>
 							</li>
-							
+
 							<li>
 								<ul class="dropdown-menu-list scroller">
 									<li class="unread notification-success">
 										<a href="#">
 											<i class="entypo-user-add pull-right"></i>
-											
+
 											<span class="line">
 												<strong>New user registered</strong>
 											</span>
-											
+
 											<span class="line small">
 												30 seconds ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="unread notification-secondary">
 										<a href="#">
 											<i class="entypo-heart pull-right"></i>
-											
+
 											<span class="line">
 												<strong>Someone special liked this</strong>
 											</span>
-											
+
 											<span class="line small">
 												2 minutes ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-primary">
 										<a href="#">
 											<i class="entypo-user pull-right"></i>
-											
+
 											<span class="line">
 												<strong>Privacy settings have been changed</strong>
 											</span>
-											
+
 											<span class="line small">
 												3 hours ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-danger">
 										<a href="#">
 											<i class="entypo-cancel-circled pull-right"></i>
-											
+
 											<span class="line">
 												John cancelled the event
 											</span>
-											
+
 											<span class="line small">
 												9 hours ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-info">
 										<a href="#">
 											<i class="entypo-info pull-right"></i>
-											
+
 											<span class="line">
 												The server is status is stable
 											</span>
-											
+
 											<span class="line small">
 												yesterday at 10:30am
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-warning">
 										<a href="#">
 											<i class="entypo-rss pull-right"></i>
-											
+
 											<span class="line">
 												New comments waiting approval
 											</span>
-											
+
 											<span class="line small">
 												last week
 											</span>
@@ -276,23 +276,23 @@
 									</li>
 								</ul>
 							</li>
-							
+
 							<li class="external">
 								<a href="#">View all notifications</a>
 							</li>
 						</ul>
-		
+
 					</li>
-		
-					
-		
-					
+
+
+
+
 				</ul> --}}
-		
+
 			</div>
 		<!-- Raw Links -->
 		<div class="col-md-6 col-sm-4 clearfix hidden-xs">
-		
+
 			<ul class="list-inline links-list pull-right">
 				<li>
 					<a href="{{route('logout')}}">
@@ -300,29 +300,29 @@
 					</a>
 				</li>
 			</ul>
-	
-		</div>
-		
-		
-		
-		</div>
-		
-		<hr />
-	
 
-		
-		
-		
-		
+		</div>
+
+
+
+		</div>
+
+		<hr />
+
+
+
+
+
+
 		<br />
-		
+
 		<h3>Exporting Table Data</h3>
 		<br />
-		
+
 		<script type="text/javascript">
 		jQuery( document ).ready( function( $ ) {
 			var $table4 = jQuery( "#table-4" );
-			
+
 			$table4.DataTable( {
 				dom: 'Bfrtip',
 				buttons: [
@@ -332,9 +332,9 @@
 					'pdfHtml5'
 				]
 			} );
-		} );		
+		} );
 		</script>
-		
+
 		<table class="table table-bordered datatable" id="table-4">
 			<thead>
 				<tr>
@@ -358,25 +358,25 @@
 				</tr>
                 @endforeach
             </tbody>
-			
+
 		</table>
-		
-		
+
+
 		<!-- Footer -->
 		<footer class="main">
-			
+
 			&copy; 2015 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
-		
+
 		</footer>
 	</div>
 
-		
 
-	
-	
-	
 
-	
+
+
+
+
+
 
 	<!-- Imported styles on this page -->
     <link rel="stylesheet" href="assets/js/datatables/datatables.css">

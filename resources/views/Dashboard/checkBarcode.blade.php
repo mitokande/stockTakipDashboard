@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Forms</title>
+    <title>JotStock | checkBarcode</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="/assets/css/font-icons/entypo/css/entypo.css">
@@ -24,7 +24,7 @@
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,17 +36,17 @@
 <body class="page-body" data-url="http://neon.dev">
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-	
+
 	<div class="sidebar-menu">
 
 		<div class="sidebar-menu-inner">
-			
+
 			<header class="logo-env">
 
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<img src="assets/images/logo@2x.png" width="120" alt="" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Jotform_logo.png" width="160" alt="" />
 					</a>
 				</div>
 
@@ -57,7 +57,7 @@
 					</a>
 				</div>
 
-								
+
 				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
 				<div class="sidebar-mobile-menu visible-xs">
 					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
@@ -66,8 +66,8 @@
 				</div>
 
 			</header>
-			
-									
+
+
 			<ul id="main-menu" class="main-menu">
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
@@ -110,33 +110,33 @@
                     </ul>
                 </li>
 			</ul>
-			
+
 		</div>
 
 	</div>
 
 	<div class="main-content">
-				
+
 		<div class="row">
-		
+
 			<!-- Profile Info and Notifications -->
 			<div class="col-md-6 col-sm-8 clearfix">
-		
+
 				<ul class="user-info pull-left pull-none-xsm">
-		
+
 					<!-- Profile Info -->
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
-		
+
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
-							{{$user->shopName}}  
+							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
+							{{$user->shopName}}
 						</a>
-		
+
 						<ul class="dropdown-menu">
-		
+
 							<!-- Reverse Caret -->
 							<li class="caret"></li>
-		
+
 							<!-- Profile sub-links -->
 							<li>
 								<a href="extra-timeline.html">
@@ -144,21 +144,21 @@
 									Edit Profile
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="mailbox.html">
 									<i class="entypo-mail"></i>
 									Inbox
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="extra-calendar.html">
 									<i class="entypo-calendar"></i>
 									Calendar
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="#">
 									<i class="entypo-clipboard"></i>
@@ -167,33 +167,33 @@
 							</li>
 						</ul>
 					</li>
-		
+
 				</ul>
-				
-				
-		
+
+
+
 			</div>
-		
-		
+
+
 			<!-- Raw Links -->
 			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
-		
+
 				<ul class="list-inline links-list pull-right">
-		
-					
+
+
 					<li>
 						<a href="extra-login.html">
 							Log Out <i class="entypo-logout right"></i>
 						</a>
 					</li>
 				</ul>
-		
+
 			</div>
-		
+
 		</div>
-		
+
 		<hr />
-		
+
 					@if ($type == 'order')
 					<ol class="breadcrumb bc-3" >
 						<li>
@@ -208,47 +208,47 @@
 							<strong>Add Order</strong>
 					</li>
 					</ol>
-			
+
 <h2>Add New Order</h2>
 <br />
 
 
 <div class="row">
 	<div class="col-md-12">
-		
+
 		<div class="panel panel-primary" data-collapsed="0">
-		
+
 			<div class="panel-heading">
 				<div class="panel-title">
 					Add New Order Form
 				</div>
-				
+
 			</div>
-			
+
 			<div class="panel-body">
 				8699118011798 -> mendiva<br>
 				8690793010052 -> erikli<br>
 				8691381000011 -> beypazarı
 				<form role="form" method="GET" action="addorder"  class="form-horizontal form-groups-bordered">
-					
+
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label">Barcode</label>
-						
+
 						<div class="col-sm-5">
 							<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
 						</div>
 					</div>
 					<div class="col-sm-offset-3 col-sm-5">
-						
+
 						<input type="submit" name="add" class="btn btn-default" value="Add Order" />
 					</div>
-					
-				</form>
-				
-			</div>
-		
 
-	
+				</form>
+
+			</div>
+
+
+
 	</div>
 </div>
 					@else
@@ -265,61 +265,61 @@
 							<strong>Add Stocks</strong>
 					</li>
 					</ol>
-			
+
 <h2>Add New Stock</h2>
 <br />
 
 
 <div class="row">
 	<div class="col-md-12">
-		
+
 		<div class="panel panel-primary" data-collapsed="0">
-		
+
 			<div class="panel-heading">
 				<div class="panel-title">
 					Add New Stock Form
 				</div>
-				
+
 			</div>
-			
+
 			<div class="panel-body">
 				8699118011798 -> mendiva<br>
 				8690793010052 -> erikli<br>
 				8691381000011 -> beypazarı
 				<form role="form" method="GET" action="addstock"  class="form-horizontal form-groups-bordered">
-					
+
 					<div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label">Barcode</label>
-						
+
 						<div class="col-sm-5">
 							<input type="text" name="barcode" class="form-control" id="field-1" placeholder="Barcode Number" >
 						</div>
 					</div>
 					<div class="col-sm-offset-3 col-sm-5">
-						
+
 						<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
 					</div>
-					
-				</form>
-				
-			</div>
-		
 
-	
+				</form>
+
+			</div>
+
+
+
 	</div>
 </div>
 					@endif
-		
+
 
 		<!-- Footer -->
 		<footer class="main">
-			
+
 			&copy; 2015 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
-		
+
 		</footer>
 	</div>
 
-		
+
 
 
 
