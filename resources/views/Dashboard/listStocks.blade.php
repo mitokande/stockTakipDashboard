@@ -342,6 +342,7 @@
                     <th>Stock Amount</th>
                     <th>Price</th>
 					<th>Total Price</th>
+					<th>Date</th>
 
 				</tr>
 			</thead>
@@ -353,6 +354,7 @@
 					<td>{{$stock->adet}}</td>
                     <td>{{$stock->fiyat}}</td>
 					<td>{{$stock->fiyat*$stock->adet}}</td>
+					<td>{{$stock->date}}</td>
 
 				</tr>
                 @endforeach
