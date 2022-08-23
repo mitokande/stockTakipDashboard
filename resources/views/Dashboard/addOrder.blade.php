@@ -46,7 +46,7 @@
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<img src="assets/images/logo@2x.png" width="120" alt="" />
+						<img src="assets/images/jotstocks2.svg" width="120" alt="" />
 					</a>
 				</div>
 
