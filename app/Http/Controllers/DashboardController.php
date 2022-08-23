@@ -12,15 +12,20 @@ class DashboardController extends Controller
         $stockResponse = Http::withHeaders([
             'Token' => session('token'),
         ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
+
         $orderResponse = Http::withHeaders([
             'Token' => session('token'),
         ])->post('https://jotform-intern.herokuapp.com/Order.php', []);
+        $stockResponse = json_decode($stockResponse);
+        $orderResponse = json_decode($orderResponse);
+        if($stockResponse->success){
+            return view('Dashboard.dashboard',[
+                'user' =>unserialize(session('user')),
+                'stocks' => $stockResponse,
+                'orders' => $orderResponse
+            ]);
+        }
         
-        return view('Dashboard.dashboard',[
-            'user' =>unserialize(session('user')),
-            'stocks' => json_decode($stockResponse),
-            'orders' => json_decode($orderResponse)
-        ]);
         
     }
 

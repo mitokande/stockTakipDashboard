@@ -200,15 +200,15 @@
 					</li>
 							<li>
 		
-									<a href="forms-main.html">Stocks</a>
+									<a href="forms-main.html">Orders</a>
 							</li>
 						<li class="active">
 		
-									<strong>Add Stocks</strong>
+									<strong>Add Order</strong>
 							</li>
 							</ol>
 					
-		<h2>Add New Stock</h2>
+		<h2>Add New Order</h2>
 		<br />
 		
 		
@@ -219,7 +219,7 @@
 				
 					<div class="panel-heading">
 						<div class="panel-title">
-							Add New Stock Form
+							Add New Order Form
 						</div>
 						
 					</div>
@@ -249,7 +249,7 @@
 								</div>
 							</div>
                             <div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Stock Amount</label>
+								<label for="field-1" class="col-sm-3 control-label">Order Amount</label>
 								
 								<div class="col-sm-5">
 									<input type="text" name="stock" class="form-control" id="field-1" placeholder="Stock Amount">
@@ -257,7 +257,7 @@
 							</div>
                             <div class="col-sm-offset-3 col-sm-5">
 								
-								<input type="submit" name="add" class="btn btn-default" value="Add Stock" />
+								<input type="submit" name="add" class="btn btn-default" value="Add Order" />
 							</div>
 						</form>
 						

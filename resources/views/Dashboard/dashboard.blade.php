@@ -339,17 +339,18 @@
 		
 			// Line Charts
 			var line_chart_demo = $("#line-chart-demo");
-		
-			var line_chart = Morris.Line({
+				console.log("{{ $stocks->data[0]->date }}");
+			var line_chart = Morris.Area({
 				element: 'line-chart-demo',
 				data: [
-					{ y: '200226', a: 100, b: 90 },
-					{ y: '2007', a: 75,  b: 65 },
-					{ y: '2008', a: 50,  b: 40 },
-					{ y: '2009', a: 75,  b: 65 },
-					{ y: '2010', a: 50,  b: 40 },
-					{ y: '2011', a: 75,  b: 65 },
-					{ y: '2012', a: 100, b: 90 }
+					<?php 
+					foreach($orders->data as $order){
+						echo "{ y: '".$order->date."', a:".$order->adet."},";
+					}
+					
+					?>
+					
+
 				],
 				xkey: 'y',
 				ykeys: ['a', 'b'],
@@ -450,7 +451,7 @@
 				<div class="panel panel-primary" id="charts_env">
 		
 					<div class="panel-heading">
-						<div class="panel-title">Stock Stats</div>
+						<div class="panel-title">Order Stats</div>
 		
 						<div class="panel-options">
 							<ul class="nav nav-tabs">
@@ -463,17 +464,13 @@
 		
 						<div class="tab-content">
 		
-							<div class="tab-pane" id="area-chart">
-								<div id="area-chart-demo" class="morrischart" style="height: 300px"></div>
-							</div>
+							
 		
 							<div class="tab-pane active" id="line-chart">
 								<div id="line-chart-demo" class="morrischart" style="height: 300px"></div>
 							</div>
 		
-							<div class="tab-pane" id="pie-chart">
-								<div id="donut-chart-demo" class="morrischart" style="height: 300px;"></div>
-							</div>
+						
 		
 						</div>
 		
