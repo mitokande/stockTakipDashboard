@@ -46,7 +46,11 @@
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
+<<<<<<< HEAD
 						<img src="https://www.jotform.com/resources/assets/icon/min/jotform-icon-transparent-400x400.png" width="120" alt="" />
+=======
+						<img src="assets/images/jotstocks2.svg" width="120" alt="" />
+>>>>>>> 9ff7ce61654b133d7420b97d7e36063ce8702dce
 					</a>
 				</div>
 
