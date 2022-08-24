@@ -109,6 +109,10 @@
                         </li>
                     </ul>
                 </li>
+				<li >
+                    <a href="/addbarcode">Add Barcode</a>
+                    
+                </li>
 			</ul>
 			
 		</div>

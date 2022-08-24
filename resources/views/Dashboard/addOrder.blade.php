@@ -109,6 +109,10 @@
                         </li>
                     </ul>
                 </li>
+				<li >
+                    <a href="/addbarcode">Add Barcode</a>
+                    
+                </li>
 			</ul>
 			
 		</div>
@@ -226,6 +230,9 @@
 					
 					<div class="panel-body">
 						
+						<div style="width: 200px;height: 200px;margin:0 auto;">
+							<img style="height:100%" src="{{$barcode->data[0]->resim}}" alt="">
+						</div>
 						<form role="form" method="POST" class="form-horizontal form-groups-bordered">
                             @csrf
 							<div class="form-group">

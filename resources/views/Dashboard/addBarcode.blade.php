@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Forms</title>
+	<title>Jotstocks | Add new product to Barcode table</title>
 
 	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
@@ -86,7 +86,7 @@
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
                         </li><li>
-                            <a href="liststocks">
+                            <a href="dashboard">
                                 <span class="title">List Stocks</span>
                                 {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
                             </a>
@@ -109,7 +109,7 @@
                         </li>
                     </ul>
                 </li>
-				<li >
+                <li >
                     <a href="/addbarcode">Add Barcode</a>
                     
                 </li>
@@ -208,11 +208,11 @@
 							</li>
 						<li class="active">
 		
-									<strong>Add Stocks</strong>
+									<strong>Add New Product to Barcode Table</strong>
 							</li>
 							</ol>
 					
-		<h2>Add New Stock</h2>
+		<h2>Add New Product to Barcode Table</h2>
 		<br />
 		
 		
@@ -223,42 +223,40 @@
 				
 					<div class="panel-heading">
 						<div class="panel-title">
-							Add New Stock Form
+							Add New Product to Barcode Table
 						</div>
 						
 					</div>
 					
 					<div class="panel-body">
-						<div style="width: 200px;height: 200px;margin:0 auto;">
-							<img style="height:100%" src="{{$barcode->data[0]->resim}}" alt="">
-						</div>
-						<form role="form" method="POST" class="form-horizontal form-groups-bordered">
+						
+						<form role="form" method="POST" class="form-horizontal form-groups-bordered" enctype="multipart/form-data">
                             @csrf
 							<div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Product Name</label>
 								<div class="col-sm-5">
-									<input type="text" name="name" class="form-control" value="{{$barcode->data[0]->urunAdi}}" id="field-1" placeholder="Product Name" readonly>
+									<input type="text" name="name" class="form-control" id="field-1" placeholder="Product Name" >
 								</div>
 							</div>
                             <div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Barcode</label>
 								
 								<div class="col-sm-5">
-									<input type="text" name="barcode" class="form-control" value="{{$barcode->data[0]->barcode}}" id="field-1" placeholder="Barcode Number" readonly>
+									<input type="text" name="barcode" class="form-control"  id="field-1" placeholder="Barcode Number" >
 								</div>
 							</div>
                             <div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Price</label>
 								
 								<div class="col-sm-5">
-									<input type="text" name="price" class="form-control" value="{{$barcode->data[0]->fiyat}}" id="field-1" placeholder="Price" readonly>
+									<input type="text" name="price" class="form-control" id="field-1" placeholder="Price" >
 								</div>
 							</div>
                             <div class="form-group">
-								<label for="field-1" class="col-sm-3 control-label">Stock Amount</label>
+								<label for="field-1" class="col-sm-3 control-label">Product Image</label>
 								
 								<div class="col-sm-5">
-									<input type="text" name="stock" class="form-control" id="field-1" placeholder="Stock Amount">
+									<input type="file" name="image" class="form-control" id="field-1">
 								</div>
 							</div>
                             <div class="col-sm-offset-3 col-sm-5">
