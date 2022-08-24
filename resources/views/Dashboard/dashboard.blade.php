@@ -343,7 +343,7 @@
 		
 			// Line Charts
 			var line_chart_demo = $("#line-chart-demo");
-				console.log("{{ $stocks->data[0]->date }}");
+				
 			var line_chart = Morris.Area({
 				element: 'line-chart-demo',
 				data: [
@@ -387,7 +387,7 @@
 		
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="{{count($stocks->data)}}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="{{!empty($stocks->data) ? count($stocks->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
 					<h3>Products in stocks</h3>
 					<p>Types of product in current stocks.</p>
@@ -419,7 +419,7 @@
 		
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
-					<div class="num" data-start="0" data-end="{{count($orders->data)}}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+					<div class="num" data-start="0" data-end="{{!empty($orders->data) ? count($orders->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
 					<h3>Orders Made</h3>
 					<p>Amount of product sold.</p>
