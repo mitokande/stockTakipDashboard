@@ -45,7 +45,7 @@
 
 				<!-- logo -->
 				<div class="logo">
-					<a href="index.html">
+					<a href="/dashboard">
 						<img src="assets/images/jotstocks2.svg" width="120" alt="" />
 					</a>
 				</div>
@@ -132,7 +132,7 @@
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
 		
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
+							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
 							{{$user->shopName}}  
 						</a>
 		

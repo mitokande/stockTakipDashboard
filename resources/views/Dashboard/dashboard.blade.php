@@ -45,7 +45,7 @@
 
 				<!-- logo -->
 				<div class="logo">
-					<a href="index.html">
+					<a href="/dashboard">
 						<img src="assets/images/jotstocks2.svg" width="120" alt="" />
 					</a>
 				</div>
