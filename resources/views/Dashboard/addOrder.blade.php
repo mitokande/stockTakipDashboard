@@ -10,7 +10,7 @@
 
     <link rel="icon" href="assets/images/favicon.ico">
 
-    <title>Neon | Forms</title>
+    <title>JotStocks | StockList</title>
 
     <link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
