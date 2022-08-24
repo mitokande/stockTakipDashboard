@@ -37,7 +37,9 @@ Route::middleware(['jotauth'])->group(function(){
     
     // Route::get('/checkbarcode',[DashboardController::class,'checkBarcode']);
     Route::get('/listorders',[DashboardController::class,'listOrders']);
-    
+
+    Route::get('/addbarcode',[DashboardController::class,'addBarcode']);
+    Route::post('/addbarcode',[DashboardController::class,'uploadBarcode']);
 });
 
 

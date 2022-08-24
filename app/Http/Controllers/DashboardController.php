@@ -4,23 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
     //
     public function index(){
-        $stockResponse = Http::withHeaders([
-            'Token' => session('token'),
-        ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
-        $orderResponse = Http::withHeaders([
-            'Token' => session('token'),
-        ])->post('https://jotform-intern.herokuapp.com/Order.php', []);
+      
+        try{
+            $stockResponse = Http::withHeaders([
+                'Token' => session('token'),
+            ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
+    
+            $orderResponse = Http::withHeaders([
+                'Token' => session('token'),
+            ])->post('https://jotform-intern.herokuapp.com/Order.php', []);
+        }catch(\Exception $e){
+            Log::error($e->getMessage());
+        }
+        $stockResponse = json_decode($stockResponse);
+        $orderResponse = json_decode($orderResponse);
         
-        return view('Dashboard.dashboard',[
-            'user' =>unserialize(session('user')),
-            'stocks' => json_decode($stockResponse),
-            'orders' => json_decode($orderResponse)
-        ]);
+        if($stockResponse->success){
+            return view('Dashboard.dashboard',[
+                'user' =>unserialize(session('user')),
+                'stocks' => $stockResponse,
+                'orders' => $orderResponse
+            ]);
+        }
+        
         
     }
 
@@ -34,6 +46,7 @@ class DashboardController extends Controller
     }public function createOrder(Request $request){
         $response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('https://jotform-intern.herokuapp.com/Barcode.php', []);
         //8690793010052
+
         return view('Dashboard.addOrder',[
             'user' =>unserialize(session('user')),
             'barcode' => json_decode($response)
@@ -93,6 +106,27 @@ class DashboardController extends Controller
             'user' =>unserialize(session('user')),
             'orders' => json_decode($response)
             ]);
+    }
+
+    public function addBarcode(){
+        return view("Dashboard.addBarcode",[
+            'user' =>unserialize(session('user')),
+        ]);
+    }
+    public function uploadBarcode(Request $request){
+        // $request->image->store()
+        $response = Http::attach(
+            'attachment',$request->file('image')
+        )->withHeaders([
+            'Token' => session('token'),
+        ])->asForm()->post('http://localhost/stockTakip/Barcode.php', [
+            'urunAdi'=>$request->name,
+            'barcode' => $request->barcode,
+            'fiyat'=>$request->price,
+            'image'=>$request->file('image')
+        ]);
+        // $path = $request->image->store('images');
+            return redirect('/addbarcode');
     }
     public function logout(){
         session()->forget('token');
