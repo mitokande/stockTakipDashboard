@@ -24,7 +24,7 @@
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,11 +36,11 @@
 <body class="page-body  " data-url="http://neon.dev">
 
 <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-	
+
 	<div class="sidebar-menu">
 
 		<div class="sidebar-menu-inner">
-			
+
 			<header class="logo-env">
 
 				<!-- logo -->
@@ -57,7 +57,7 @@
 					</a>
 				</div>
 
-								
+
 				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
 				<div class="sidebar-mobile-menu visible-xs">
 					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
@@ -66,8 +66,8 @@
 				</div>
 
 			</header>
-			
-									
+
+
 			<ul id="main-menu" class="main-menu">
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
@@ -129,32 +129,32 @@
                     </ul>
                 </li>
 			</ul>
-			
+
 		</div>
 
 	</div>
 
 	<div class="main-content">
-				
+
 		<div class="row">
-		
+
 			<!-- Profile Info and Notifications -->
 			<div class="col-md-6 col-sm-8 clearfix">
-		
+
 				<ul class="user-info pull-left pull-none-xsm">
-		
+
 					<!-- Profile Info -->
 					<li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
-		
+
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="assets/images/jotform-icon-dark.svg" alt="" class="img-circle" width="44" />
-							{{$user->shopName}}  
+							{{$user->shopName}}
 						</a>
 						<ul class="dropdown-menu">
-		
+
 							<!-- Reverse Caret -->
 							<li class="caret"></li>
-		
+
 							<!-- Profile sub-links -->
 							<li>
 								<a href="extra-timeline.html">
@@ -162,21 +162,21 @@
 									Edit Profile
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="mailbox.html">
 									<i class="entypo-mail"></i>
 									Inbox
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="extra-calendar.html">
 									<i class="entypo-calendar"></i>
 									Calendar
 								</a>
 							</li>
-		
+
 							<li>
 								<a href="#">
 									<i class="entypo-clipboard"></i>
@@ -185,19 +185,19 @@
 							</li>
 						</ul>
 					</li>
-		
+
 				</ul>
-				
+
 				{{-- <ul class="user-info pull-left pull-right-xs pull-none-xsm">
-		
+
 					<!-- Raw Notifications -->
 					<li class="notifications dropdown">
-		
+
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 							<i class="entypo-attention"></i>
 							<span class="badge badge-info">6</span>
 						</a>
-		
+
 						<ul class="dropdown-menu">
 							<li class="top">
 								<p class="small">
@@ -205,87 +205,87 @@
 									You have <strong>3</strong> new notifications.
 								</p>
 							</li>
-							
+
 							<li>
 								<ul class="dropdown-menu-list scroller">
 									<li class="unread notification-success">
 										<a href="#">
 											<i class="entypo-user-add pull-right"></i>
-											
+
 											<span class="line">
 												<strong>New user registered</strong>
 											</span>
-											
+
 											<span class="line small">
 												30 seconds ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="unread notification-secondary">
 										<a href="#">
 											<i class="entypo-heart pull-right"></i>
-											
+
 											<span class="line">
 												<strong>Someone special liked this</strong>
 											</span>
-											
+
 											<span class="line small">
 												2 minutes ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-primary">
 										<a href="#">
 											<i class="entypo-user pull-right"></i>
-											
+
 											<span class="line">
 												<strong>Privacy settings have been changed</strong>
 											</span>
-											
+
 											<span class="line small">
 												3 hours ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-danger">
 										<a href="#">
 											<i class="entypo-cancel-circled pull-right"></i>
-											
+
 											<span class="line">
 												John cancelled the event
 											</span>
-											
+
 											<span class="line small">
 												9 hours ago
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-info">
 										<a href="#">
 											<i class="entypo-info pull-right"></i>
-											
+
 											<span class="line">
 												The server is status is stable
 											</span>
-											
+
 											<span class="line small">
 												yesterday at 10:30am
 											</span>
 										</a>
 									</li>
-									
+
 									<li class="notification-warning">
 										<a href="#">
 											<i class="entypo-rss pull-right"></i>
-											
+
 											<span class="line">
 												New comments waiting approval
 											</span>
-											
+
 											<span class="line small">
 												last week
 											</span>
@@ -293,25 +293,25 @@
 									</li>
 								</ul>
 							</li>
-							
+
 							<li class="external">
 								<a href="#">View all notifications</a>
 							</li>
 						</ul>
-		
+
 					</li>
-		
-					
-		
-					
+
+
+
+
 				</ul> --}}
-		
+
 			</div>
-		
-		
+
+
 			<!-- Raw Links -->
 			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
-		
+
 				<ul class="list-inline links-list pull-right">
 					<li>
 						<a href="{{route('logout')}}">
@@ -319,14 +319,14 @@
 						</a>
 					</li>
 				</ul>
-		
+
 			</div>
-		
+
 		</div>
-		
+
 		<hr />
-		
-		
+
+
 		<script type="text/javascript">
 		jQuery(document).ready(function($)
 		{
@@ -348,27 +348,33 @@
 			// 		"showMethod": "fadeIn",
 			// 		"hideMethod": "fadeOut"
 			// 	};
-		
+
 			// 	toastr.success("You have been awarded with 1 year free subscription. Enjoy it!", "Account Subcription Updated", opts);
 			// }, 3000);
-		
-		
-			
-		
-		
+
+
+
+
+
 			// Line Charts
 			var line_chart_demo = $("#line-chart-demo");
-				
+
 			var line_chart = Morris.Area({
 				element: 'line-chart-demo',
 				data: [
+<<<<<<< HEAD
 					<?php 
 					foreach($orders as $order){
 						echo "{ y: '".$order->date."', a:".$order->productQuantity."},";
+=======
+					<?php
+					foreach($orders->data as $order){
+						echo "{ y: '".$order->date."', a:".$order->adet."},";
+>>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					}
-					
+
 					?>
-					
+
 
 				],
 				xkey: 'y',
@@ -376,74 +382,84 @@
 				labels: ['October 2013', 'November 2013'],
 				redraw: true
 			});
-		
+
 			line_chart_demo.parent().attr('style', '');
-		
-		
-			
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
 		});
-		
-		
+
+
 		function getRandomInt(min, max)
 		{
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 		</script>
-		
-		
+
+
 		<div class="row">
-            
+
 			<div class="col-sm-3 col-xs-6">
-		
+
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
+<<<<<<< HEAD
 					<div class="num" data-start="0" data-end="{{!empty($stocks) ? count($stocks) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
+=======
+					<div class="num" data-start="0" data-end="{{!empty($stocks->data) ? count($stocks->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+
+>>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					<h3>Products in stocks</h3>
 					<p>Types of product in current stocks.</p>
 				</div>
-		
+
 			</div>
-		
+
 			<div class="col-sm-3 col-xs-6">
-		
+
 				<div class="tile-stats tile-green">
 					<div class="icon"><i class="entypo-chart-bar"></i></div>
-                    <?php 
+                    <?php
                     $count =0;
                     foreach ($stocks as $stock) {
                         $count += $stock->productQuantity;
                     }
                     ?>
 					<div class="num" data-start="0" data-end="{{$count}}" data-postfix="" data-duration="1500" data-delay="600">0</div>
-					
+
 					<h3>Product Count</h3>
 					<p>Current total amount of every product stock.</p>
 				</div>
-		
+
 			</div>
-			
+
 			<div class="clear visible-xs"></div>
-		
+
 			<div class="col-sm-3 col-xs-6">
-		
+
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
+<<<<<<< HEAD
 					<div class="num" data-start="0" data-end="{{!empty($orders) ? count($orders) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
+=======
+					<div class="num" data-start="0" data-end="{{!empty($orders->data) ? count($orders->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+
+>>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					<h3>Orders Made</h3>
 					<p>Amount of product sold.</p>
 				</div>
-		
+
 			</div>
-		
+
 			<div class="col-sm-3 col-xs-6">
-				<?php 
+				<?php
                     $lowStock =0;
                     foreach ($stocks as $stock) {
 						if($stock->productQuantity < 10){
@@ -454,95 +470,95 @@
 				<div class="tile-stats tile-blue">
 					<div class="icon"><i class="entypo-rss"></i></div>
 					<div class="num" data-start="0" data-end="{{$lowStock}}" data-postfix="" data-duration="1500" data-delay="1800">0</div>
-		
+
 					<h3>Low Stock</h3>
 					<p>Types of products that is low on stock.</p>
 				</div>
-		
+
 			</div>
 		</div>
-		
+
 		<br />
-		
+
 		<div class="row">
 			<div class="col-sm-8">
-		
+
 				<div class="panel panel-primary" id="charts_env">
-		
+
 					<div class="panel-heading">
 						<div class="panel-title">Order Stats</div>
-		
+
 						<div class="panel-options">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#line-chart" data-toggle="tab">Line Charts</a></li>
 							</ul>
 						</div>
 					</div>
-		
+
 					<div class="panel-body">
-		
+
 						<div class="tab-content">
-		
-							
-		
+
+
+
 							<div class="tab-pane active" id="line-chart">
 								<div id="line-chart-demo" class="morrischart" style="height: 300px"></div>
 							</div>
-		
-						
-		
+
+
+
 						</div>
-		
+
 					</div>
-		
-					
-		
+
+
+
 				</div>
-		
+
 			</div>
-		
-		
+
+
 		</div>
-		
-		
+
+
 		<br />
-		
+
 		<div class="row">
-		
-			
-		
-			
-		
+
+
+
+
+
 		</div>
-		
+
 		<br />
-		
-		
+
+
 		<script type="text/javascript">
 			// Code used to add Todo Tasks
 			jQuery(document).ready(function($)
 			{
-				
+
 			});
 		</script>
-		
-		
-		
+
+
+
 		<!-- Footer -->
 		<footer class="main">
-			
-			&copy; 2015 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
-		
+
+			&copy; 2022 <strong>Jotstock</strong> Dashboard Theme by <a href="http://laborator.co" target="_blank">Mobile Team</a>
+
 		</footer>
 	</div>
 
-		
 
-	
-	
-	
 
-	
+
+
+
+
+
 
 	<!-- Imported styles on this page -->
 
