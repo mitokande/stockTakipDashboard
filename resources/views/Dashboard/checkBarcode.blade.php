@@ -111,7 +111,6 @@
                 </li>
                 <li >
                     <a href="/addbarcode">Add Barcode</a>
-<<<<<<< HEAD
                 </li>
 				<li class="has sub">
                     <a href="">Categories</a>
@@ -128,9 +127,6 @@
                             </a>
                         </li>
                     </ul>
-=======
-
->>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
                 </li>
             </ul>
 
