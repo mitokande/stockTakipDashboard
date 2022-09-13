@@ -6,10 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "aws/aws-sdk-php": "^3.235",
+        "aws/aws-sdk-php-laravel": "^3.7",
         "guzzlehttp/guzzle": "^7.4",
+        "jotform/jotform-api-php": "dev-master",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "league/flysystem-aws-s3-v3": "3.0",
         "yajra/laravel-datatables": "9.0"
     },
     "require-dev": {

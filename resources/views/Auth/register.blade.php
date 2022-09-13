@@ -17,7 +17,7 @@
     <h4 style="text-align: center">Sign Up To Our World</h4>
     <div
         style="background: #F5F5F5; margin: 15px; padding: 30px; border-radius: 20px; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);">
-        <form style="margin-top: 50px" method="post">
+        <form style="margin-top: 50px" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -36,12 +36,21 @@
                 <label for="exampleInputEmail1">Shop Name</label>
                 <input name="shopName" type="text" class="form-control" id="shopName">
             </div>
-
+            <div class="form-group">
+                <label for="exampleInputEmail1">Shop Category</label>
+                <input name="shopCategory" type="text" class="form-control" id="shopCategory">
+            </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1">
             </div>
-
+            <div class="form-group">
+                <label for="field-1" class="col-sm-3 control-label">Shop Image</label>
+                
+                <div class="col-sm-5">
+                    <input type="file" name="image" class="form-control" id="field-1">
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -111,7 +111,22 @@
                 </li>
 				<li >
                     <a href="/addbarcode">Add Barcode</a>
-                    
+                </li>
+				<li class="has sub">
+                    <a href="">Categories</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="addcategory">
+                                <span class="title">Add Category</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listcategories">
+                                <span class="title">List Categories</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 			
@@ -230,28 +245,40 @@
 					
 					<div class="panel-body">
 						<div style="width: 200px;height: 200px;margin:0 auto;">
-							<img style="height:100%" src="{{$barcode->data[0]->resim}}" alt="">
+							<img style="height:100%" src="{{$product->productImage}}" alt="">
 						</div>
 						<form role="form" method="POST" class="form-horizontal form-groups-bordered">
                             @csrf
 							<div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Product Name</label>
 								<div class="col-sm-5">
-									<input type="text" name="name" class="form-control" value="{{$barcode->data[0]->urunAdi}}" id="field-1" placeholder="Product Name" readonly>
+									<input type="text" name="name" class="form-control" value="{{$product->productName}}" id="field-1" placeholder="Product Name" readonly>
 								</div>
 							</div>
                             <div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Barcode</label>
 								
 								<div class="col-sm-5">
-									<input type="text" name="barcode" class="form-control" value="{{$barcode->data[0]->barcode}}" id="field-1" placeholder="Barcode Number" readonly>
+									<input type="text" name="barcode" class="form-control" value="{{$product->productBarcode}}" id="field-1" placeholder="Barcode Number" readonly>
 								</div>
 							</div>
                             <div class="form-group">
 								<label for="field-1" class="col-sm-3 control-label">Price</label>
 								
 								<div class="col-sm-5">
-									<input type="text" name="price" class="form-control" value="{{$barcode->data[0]->fiyat}}" id="field-1" placeholder="Price" readonly>
+									<input type="text" name="price" class="form-control" value="{{$product->productPrice}}" id="field-1" placeholder="Price" readonly>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="field-1" class="col-sm-3 control-label">Product Category</label>
+								
+								<div class="col-sm-5">
+									<select class="form-control" name="category" id="">
+										<option   value="null">Choose A Category</option>
+										@foreach ($categories as $category)
+											<option value="{{$category->categoryName}}">{{$category->categoryName}}</option>
+										@endforeach
+									</select>
 								</div>
 							</div>
                             <div class="form-group">

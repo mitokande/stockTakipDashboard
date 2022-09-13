@@ -111,7 +111,22 @@
                 </li>
 				<li >
                     <a href="/addbarcode">Add Barcode</a>
-                    
+                </li>
+				<li class="has sub">
+                    <a href="">Categories</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="addcategory">
+                                <span class="title">Add Category</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listcategories">
+                                <span class="title">List Categories</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 			
@@ -347,19 +362,21 @@
                     <th>Price</th>
 					<th>Total Price</th>
 					<th>Date</th>
-
+					<th>Category</th>
+					<th>Do</th>
 				</tr>
 			</thead>
 			<tbody>
-                @foreach ($stocks->data as $stock)
+                @foreach ($stocks as $stock)
                 <tr class="odd gradeX">
-					<td>{{$stock->urunAdi}}</td>
-					<td>{{$stock->barcode}}</td>
-					<td>{{$stock->adet}}</td>
-                    <td>{{$stock->fiyat}}</td>
-					<td>{{$stock->fiyat*$stock->adet}}</td>
-					<td>{{$stock->date}}</td>
-
+					<td>{{$stock->productName}}</td>
+					<td>{{$stock->productBarcode}}</td>
+					<td>{{$stock->productQuantity}}</td>
+                    <td>{{$stock->productPrice}}</td>
+					<td>{{$stock->productPrice*$stock->productQuantity}}</td>
+					<td>{{$stock->productDate}}</td>
+					<td>{{$stock->productCategory}}</td>
+					<td><a href="/delete?id={{$stock->productID}}">Delete</a></td>
 				</tr>
                 @endforeach
             </tbody>

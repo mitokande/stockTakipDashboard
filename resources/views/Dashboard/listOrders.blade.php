@@ -111,7 +111,22 @@
                 </li>
 				<li >
                     <a href="/addbarcode">Add Barcode</a>
-                    
+                </li>
+				<li class="has sub">
+                    <a href="">Categories</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="addcategory">
+                                <span class="title">Add Category</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listcategories">
+                                <span class="title">List Categories</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 			
@@ -346,17 +361,19 @@
                     <th>Stock Amount</th>
                     <th>Price</th>
 					<th>Total Price</th>
+					<th>Operation</th>
 
 				</tr>
 			</thead>
 			<tbody>
-                @foreach ($orders->data as $order)
+                @foreach ($orders as $order)
                 <tr class="odd gradeX">
-					<td>{{$order->urunAdi}}</td>
-					<td>{{$order->barcode}}</td>
-					<td>{{$order->adet}}</td>
-                    <td>{{$order->fiyat}}</td>
-					<td>{{$order->fiyat*$order->adet}}</td>
+					<td>{{$order->productName}}</td>
+					<td>{{$order->productBarcode}}</td>
+					<td>{{$order->productQuantity}}</td>
+                    <td>{{$order->productPrice}}</td>
+					<td>{{$order->productPrice*$order->productQuantity}}</td>
+					<td><a href="/delete?id={{$order->productID}}">Delete</a></td>
 
 				</tr>
                 @endforeach

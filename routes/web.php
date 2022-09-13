@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Stock\StockController;
 use \App\Http\Controllers\Auth\RegisterController;
 use \App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\ShopController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +19,11 @@ use \App\Http\Controllers\ApplicationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::controller(ShopController::class)->group(function () {
+    Route::get('/shop', 'index');
+    Route::get('/shop/{shopId}','singleShop');
+    Route::get('/cat/{shopId}','category');
+});
 Route::get('/', [ApplicationController::class,"home"])->name("home");
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'postLogin'])->name('postLogin');
@@ -40,6 +47,14 @@ Route::middleware(['jotauth'])->group(function(){
 
     Route::get('/addbarcode',[DashboardController::class,'addBarcode']);
     Route::post('/addbarcode',[DashboardController::class,'uploadBarcode']);
+
+
+    Route::get('/addcategory',[DashboardController::class,'addCategory']);
+    Route::post('/addcategory',[DashboardController::class,'addCategoryPost']);
+    Route::get('/listcategories',[DashboardController::class,'listCategories']);
+
+
+    Route::get('delete',[DashboardController::class,'delete']);
 });
 
 

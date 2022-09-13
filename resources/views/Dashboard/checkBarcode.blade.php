@@ -111,7 +111,22 @@
                 </li>
 				<li >
                     <a href="/addbarcode">Add Barcode</a>
-                    
+                </li>
+				<li class="has sub">
+                    <a href="">Categories</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="addcategory">
+                                <span class="title">Add Category</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listcategories">
+                                <span class="title">List Categories</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 			

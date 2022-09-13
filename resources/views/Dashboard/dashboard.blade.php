@@ -111,7 +111,22 @@
                 </li>
 				<li >
                     <a href="/addbarcode">Add Barcode</a>
-                    
+                </li>
+				<li class="has sub">
+                    <a href="">Categories</a>
+                    <ul class="visible">
+                        <li >
+                            <a href="addcategory">
+                                <span class="title">Add Category</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li><li>
+                            <a href="listcategories">
+                                <span class="title">List Categories</span>
+                                {{-- <span class="badge badge-success badge-roundless">v2.0</span> --}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 			</ul>
 			
@@ -348,8 +363,8 @@
 				element: 'line-chart-demo',
 				data: [
 					<?php 
-					foreach($orders->data as $order){
-						echo "{ y: '".$order->date."', a:".$order->adet."},";
+					foreach($orders as $order){
+						echo "{ y: '".$order->date."', a:".$order->productQuantity."},";
 					}
 					
 					?>
@@ -387,7 +402,7 @@
 		
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="{{!empty($stocks->data) ? count($stocks->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
+					<div class="num" data-start="0" data-end="{{!empty($stocks) ? count($stocks) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
 					<h3>Products in stocks</h3>
 					<p>Types of product in current stocks.</p>
@@ -401,8 +416,8 @@
 					<div class="icon"><i class="entypo-chart-bar"></i></div>
                     <?php 
                     $count =0;
-                    foreach ($stocks->data as $stock) {
-                        $count += $stock->adet;
+                    foreach ($stocks as $stock) {
+                        $count += $stock->productQuantity;
                     }
                     ?>
 					<div class="num" data-start="0" data-end="{{$count}}" data-postfix="" data-duration="1500" data-delay="600">0</div>
@@ -419,7 +434,7 @@
 		
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
-					<div class="num" data-start="0" data-end="{{!empty($orders->data) ? count($orders->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+					<div class="num" data-start="0" data-end="{{!empty($orders) ? count($orders) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
 					<h3>Orders Made</h3>
 					<p>Amount of product sold.</p>
@@ -430,8 +445,8 @@
 			<div class="col-sm-3 col-xs-6">
 				<?php 
                     $lowStock =0;
-                    foreach ($stocks->data as $stock) {
-						if($stock->adet < 10){
+                    foreach ($stocks as $stock) {
+						if($stock->productQuantity < 10){
 							$lowStock += 1;
 						}
                     }

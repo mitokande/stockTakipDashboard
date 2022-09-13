@@ -2,65 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\CategoryService;
+use App\Http\Services\ImageUploadService;
+use App\Http\Services\ProductService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
     //
     public function index(){
-      
-        try{
-            $stockResponse = Http::withHeaders([
-                'Token' => session('token'),
-            ])->post('https://jotform-intern.herokuapp.com/Stock.php', []);
-    
-            $orderResponse = Http::withHeaders([
-                'Token' => session('token'),
-            ])->post('https://jotform-intern.herokuapp.com/Order.php', []);
-        }catch(\Exception $e){
-            Log::error($e->getMessage());
-        }
-        $stockResponse = json_decode($stockResponse);
-        $orderResponse = json_decode($orderResponse);
-        
-        if($stockResponse->success){
-            return view('Dashboard.dashboard',[
-                'user' =>unserialize(session('user')),
-                'stocks' => $stockResponse,
-                'orders' => $orderResponse
-            ]);
-        }
-        
-        
+        $user = unserialize(session('user'));
+        $stocks = ProductService::getAllProducts($user->stockFormId);
+        $orders = ProductService::getAllProducts($user->orderFormId);
+        return view('Dashboard.dashboard',[
+            'user' =>unserialize(session('user')),
+            'stocks' => $stocks,
+            'orders' => $orders
+        ]);
     }
 
     public function createStock(Request $request){
-        $response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('https://jotform-intern.herokuapp.com/Barcode.php', []);
+        // $response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('http://localhost/stok/stockTakip/Barcode.php', []);
         //8690793010052
+        $product = ProductService::getProductByBarcode($request->barcode);
+
+        $user = unserialize(session('user'));
         return view('Dashboard.addStock',[
-            'user' =>unserialize(session('user')),
-            'barcode' => json_decode($response)
+            'user' => $user,
+            'product' => $product,
+            'categories' => CategoryService::getCategories($user->shopCategoryFormId)
         ]);
     }public function createOrder(Request $request){
-        $response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('https://jotform-intern.herokuapp.com/Barcode.php', []);
+        //$response = Http::withBody(json_encode([array('barcode' =>$request->barcode)]), 'application/json')->post('http://localhost/stok/stockTakip/Barcode.php', []);
         //8690793010052
-
+        $product = ProductService::getProductByBarcode($request->barcode);
+       
+        $user = unserialize(session('user'));
         return view('Dashboard.addOrder',[
-            'user' =>unserialize(session('user')),
-            'barcode' => json_decode($response)
+            'user' => $user,
+            'product' => $product,
+            'categories' => CategoryService::getCategories($user->shopCategoryFormId)
         ]);
     }
     public function addStock(Request $request){
-        $response = Http::withHeaders([
-            'Token' => session('token'),
-        ])->withBody(json_encode([array(
-            'urunAdi' =>$request->name,
-            'barcode' =>$request->barcode,
-            'fiyat' =>$request->price,
-            'stok' =>$request->stock
-        )]), 'application/json')->post('https://jotform-intern.herokuapp.com/Stock.php', []);
+      
+        ProductService::addProductStock($request);
         return redirect('/liststocks');
         return view('Dashboard.addStock',[
             'user' =>unserialize(session('user')),
@@ -76,35 +62,27 @@ class DashboardController extends Controller
     }
 
     public function listStocks(){
-        $response = Http::withHeaders([
-            "Token" => session('token')
-        ])->get('https://jotform-intern.herokuapp.com/Stock.php');
+        $user = unserialize(session('user'));
+        $stocks = ProductService::getAllProducts($user->stockFormId);
         return view("Dashboard.listStocks",[
-            'user' =>unserialize(session('user')),
-            'stocks' => json_decode($response)
+            'user' =>$user,
+            'stocks' => $stocks
             ]);
     }
     public function addOrder(Request $request){
-        $response = Http::withHeaders([
-            'Token' => session('token'),
-        ])->withBody(json_encode([array(
-            'urunAdi' =>$request->name,
-            'barcode' =>$request->barcode,
-            'fiyat' =>$request->price,
-            'adet' =>$request->stock
-        )]), 'application/json')->post('https://jotform-intern.herokuapp.com/Order.php', []);
+        ProductService::addProductOrder($request);
+
         return redirect('/listorders');
         return view('Dashboard.addStock',[
             'user' =>unserialize(session('user')),
         ]);
     }
     public function listOrders(){
-        $response = Http::withHeaders([
-            "Token" => session('token')
-        ])->get('https://jotform-intern.herokuapp.com/Order.php');
+        $user = unserialize(session('user'));
+        $orders = ProductService::getAllProducts($user->orderFormId);
         return view("Dashboard.listOrders",[
-            'user' =>unserialize(session('user')),
-            'orders' => json_decode($response)
+            'user' =>$user,
+            'orders' => $orders
             ]);
     }
 
@@ -114,22 +92,37 @@ class DashboardController extends Controller
         ]);
     }
     public function uploadBarcode(Request $request){
-        // $request->image->store()
-        $response = Http::attach(
-            'attachment',$request->file('image')
-        )->withHeaders([
-            'Token' => session('token'),
-        ])->asForm()->post('http://localhost/stockTakip/Barcode.php', [
-            'urunAdi'=>$request->name,
-            'barcode' => $request->barcode,
-            'fiyat'=>$request->price,
-            'image'=>$request->file('image')
-        ]);
+        
+        ProductService::addProductToBarcodeDatabase($request);
         // $path = $request->image->store('images');
             return redirect('/addbarcode');
     }
     public function logout(){
         session()->forget('token');
         return redirect('/');
+    }
+
+    public function addCategory(){
+        return view('Dashboard.addCategory',[
+            'user' =>unserialize(session('user')),
+        ]);
+    }
+    public function addCategoryPost(Request $request){
+        $categoryName = $request->name;
+        $user = unserialize(session('user'));
+        CategoryService::addCategory($user->shopCategoryFormId,$categoryName);
+        return redirect('/listcategories');
+    }
+    public function listCategories(){
+        $user = unserialize(session('user'));
+        
+        return view("Dashboard.listCategories",[
+            'user' =>$user,
+            'categories' => CategoryService::getCategories($user->shopCategoryFormId)
+        ]);
+    }
+    public function delete(Request $request){
+        ProductService::deleteProduct($request->id);
+        return redirect('/dashboard');
     }
 }
