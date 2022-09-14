@@ -362,15 +362,9 @@
 			var line_chart = Morris.Area({
 				element: 'line-chart-demo',
 				data: [
-<<<<<<< HEAD
 					<?php 
 					foreach($orders as $order){
 						echo "{ y: '".$order->date."', a:".$order->productQuantity."},";
-=======
-					<?php
-					foreach($orders->data as $order){
-						echo "{ y: '".$order->date."', a:".$order->adet."},";
->>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					}
 
 					?>
@@ -408,13 +402,8 @@
 
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
-<<<<<<< HEAD
 					<div class="num" data-start="0" data-end="{{!empty($stocks) ? count($stocks) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
-=======
-					<div class="num" data-start="0" data-end="{{!empty($stocks->data) ? count($stocks->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="0">0</div>
-
->>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					<h3>Products in stocks</h3>
 					<p>Types of product in current stocks.</p>
 				</div>
@@ -445,13 +434,8 @@
 
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
-<<<<<<< HEAD
 					<div class="num" data-start="0" data-end="{{!empty($orders) ? count($orders) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
-=======
-					<div class="num" data-start="0" data-end="{{!empty($orders->data) ? count($orders->data) : "0" }}" data-postfix="" data-duration="1500" data-delay="1200">0</div>
-
->>>>>>> 767e275b3c74ace896f1e2be9e92e13c182af9a1
 					<h3>Orders Made</h3>
 					<p>Amount of product sold.</p>
 				</div>
